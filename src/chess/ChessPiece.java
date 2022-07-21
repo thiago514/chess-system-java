@@ -6,7 +6,7 @@ import boardgame.Position;
 
 public abstract class ChessPiece extends Piece {
 	private Color color;
-	//private int moveCount;
+	private int moveCount;
 	
 	public ChessPiece(Board board, Color color) {
 		super(board);
@@ -26,9 +26,15 @@ public abstract class ChessPiece extends Piece {
 		return p != null && p.getColor() != color;
 	}
 	
-	//protected void increaseMoveCount() {}
+	protected void increaseMoveCount() {
+		moveCount++;
+	}
 	
-	//protected void decreaseMoveCount() {}
+	protected void decreaseMoveCount() {
+		moveCount--;
+	}
 	
-	//public ChessPosition getChessPosition() {}
+	public int getMoveCount() {
+		return moveCount;
+	}
 }
